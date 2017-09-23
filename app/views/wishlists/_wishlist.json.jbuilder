@@ -1,2 +1,5 @@
-json.extract! wishlist, :id, :created_at, :updated_at
-json.url wishlist_url(wishlist, format: :json)
+json.extract! wishlist, :id,
+                        :user_id,
+                        :description,
+                        :location_id,
+                        :due_date
