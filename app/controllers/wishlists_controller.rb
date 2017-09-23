@@ -5,6 +5,10 @@ class WishlistsController < ApplicationController
   # GET /wishlists.json
   def index
     @wishlists = Wishlist.all
+    @wishlists = @wishlists.where("due_date > ?", filter[:due_date]) if filter[:due_date]
+    @wishlists = @wishlists.where(user_id: filter[:user_id].to_i) if filter[:user_id]
+    @wishlists = @wishlists.where(location_id: filter[:location_id].to_i) if filter[:location_id]
+    @wishlists = @wishlists.where("description LIKE ?", "%#{filter[:description]}%") if filter[:description]
   end
 
   # GET /wishlists/1
@@ -76,5 +80,9 @@ class WishlistsController < ApplicationController
               :location_id,
               :due_date
             )
+    end
+
+    def filter
+      params[:filter]
     end
 end
