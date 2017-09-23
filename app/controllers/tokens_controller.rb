@@ -1,5 +1,5 @@
 class TokensController < ApplicationController
-  def authenticate_user
+  def create
     user = User.where(email: params[:email]).limit(1).first
     if !user.nil? && user.authenticate(params[:password])
       render json: payload(user)
