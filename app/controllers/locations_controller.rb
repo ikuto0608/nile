@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    @locations = @locations.where("city_name LIKE ?", "%#{filter[:city_name].downcase}%") if filter[:city_name]
   end
 
   # GET /locations/1
@@ -70,5 +71,9 @@ class LocationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
       params.fetch(:location, {})
+    end
+
+    def filter
+      params[:filter]
     end
 end

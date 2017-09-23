@@ -5,10 +5,10 @@
 #
 #   movies = Movie.find_or_create_by([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.find_or_create_by(name: 'Luke', movie: movies.first)
-Location.find_or_create_by!(city_name: 'Tokyo', lat: 35.689488, long: 139.691706)
-Location.find_or_create_by!(city_name: 'Kyoto', lat: 35.021247, long: 135.755597)
-Location.find_or_create_by!(city_name: 'Vancouver', lat: 49.282729, long: -123.120738)
-Location.find_or_create_by!(city_name: 'Shanghai', lat: 31.23039, long: 121.473702)
+Location.find_or_create_by!(city_name: 'tokyo', lat: 35.689488, long: 139.691706)
+Location.find_or_create_by!(city_name: 'kyoto', lat: 35.021247, long: 135.755597)
+Location.find_or_create_by!(city_name: 'vancouver', lat: 49.282729, long: -123.120738)
+Location.find_or_create_by!(city_name: 'shanghai', lat: 31.23039, long: 121.473702)
 
 User.find_or_create_by!(
   full_name: 'Wesley Wong', 
