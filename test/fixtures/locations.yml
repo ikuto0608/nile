@@ -6,8 +6,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  city_name  :string
-#  lat        :integer
-#  long       :integer
+#  lat        :decimal(, )
+#  long       :decimal(, )
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
