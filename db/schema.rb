@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923215519) do
+ActiveRecord::Schema.define(version: 20170923225716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,10 @@ ActiveRecord::Schema.define(version: 20170923215519) do
   create_table "user_locations", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.integer  "user_id"
     t.integer  "location_id"
-    t.index ["location_id"], name: "index_user_locations_on_location_id", using: :btree
-    t.index ["user_id"], name: "index_user_locations_on_user_id", using: :btree
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170923215519) do
     t.string   "full_name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "profile_pic"
   end
 
   create_table "wishlists", force: :cascade do |t|
