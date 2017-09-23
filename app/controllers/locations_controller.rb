@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations = params[:keyword] ? Location.where("city_name LIKE ?", "%#{params[:keyword].downcase}%") : Location.all
   end
 
   # GET /locations/1
