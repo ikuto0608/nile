@@ -53,14 +53,14 @@ ActiveRecord::Schema.define(version: 20170923211823) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "instragram_url"
     t.string   "pintrest_url"
     t.string   "tag_line"
     t.string   "full_name"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
   end
 
   create_table "wishlists", force: :cascade do |t|

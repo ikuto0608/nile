@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  instragram_url  :string
+#  pintrest_url    :string
+#  tag_line        :string
+#  full_name       :string
+#  email           :string
+#  password_digest :string
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined. If you add columns to the
