@@ -69,6 +69,12 @@ class UserLocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_location_params
-      params.fetch(:user_location, {})
+      params.require(:user_location)
+            .permit(
+              :start_time,
+              :end_time,
+              :user_id,
+              :location_id
+            )
     end
 end
