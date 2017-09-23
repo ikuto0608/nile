@@ -5,6 +5,9 @@ class UserLocationsController < ApplicationController
   # GET /user_locations.json
   def index
     @user_locations = UserLocation.all
+    @user_locations = @user_locations.where("end_time > ? and start_time < ?", filter[:due_time], filter[:due_time]) if filter[:due_time]
+    @user_locations = @user_locations.where(user_id: filter[:user_id].to_i) if filter[:user_id]
+    @user_locations = @user_locations.where(location_id: filter[:location_id].to_i) if filter[:location_id]
   end
 
   # GET /user_locations/1
@@ -76,5 +79,9 @@ class UserLocationsController < ApplicationController
               :user_id,
               :location_id
             )
+    end
+
+    def filter
+      params[:filter]
     end
 end
