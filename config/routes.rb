@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
       member do
         get :reviews
+        get :wishlists
+        get :user_locations
       end
     end
     post 'tokens', to: 'tokens#create'

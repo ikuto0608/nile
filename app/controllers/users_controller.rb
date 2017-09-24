@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :reviews]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :reviews, :wishlists, :user_locations]
 
   # GET /users
   # GET /users.json
@@ -84,6 +84,14 @@ class UsersController < ApplicationController
 
   def reviews
     @reviews = @user.reviews_as_reviewee
+  end
+
+  def wishlists
+    @wishlists = @user.wishlists
+  end
+
+  def user_locations
+    @user_locations = @user.user_locations
   end
 
   private
