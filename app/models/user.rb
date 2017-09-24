@@ -11,6 +11,7 @@
 #  full_name       :string
 #  email           :string
 #  password_digest :string
+#  profile_pic     :string
 #
 
 class User < ApplicationRecord
@@ -18,6 +19,7 @@ class User < ApplicationRecord
   has_many :wishlists
   has_many :reviews_as_reviewer, foreign_key: "reviewer_id", class_name: "Review"
   has_many :reviews_as_reviewee, foreign_key: "reviewee_id", class_name: "Review"
+  has_many :bittings
 
   validates :full_name, presence: true
   validates :email, presence: true, uniqueness: true

@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: wishlists
+# Table name: biddings
 #
 #  id          :integer          not null, primary key
+#  price       :decimal(, )
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
-#  description :text
-#  location_id :integer
-#  due_date    :datetime
+#  wishlist_id :integer
 #
 
-class Wishlist < ApplicationRecord
-  has_one :user
-  has_one :location
-  has_many :bittings
-
+class Bidding < ApplicationRecord
+  belongs_to :user
+  belongs_to :wishlist
 end

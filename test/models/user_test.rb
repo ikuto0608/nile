@@ -11,6 +11,7 @@
 #  full_name       :string
 #  email           :string
 #  password_digest :string
+#  profile_pic     :string
 #
 
 require 'test_helper'

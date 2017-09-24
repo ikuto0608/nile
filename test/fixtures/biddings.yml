@@ -1,17 +1,13 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: biddings
 #
-#  id              :integer          not null, primary key
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  instragram_url  :string
-#  pintrest_url    :string
-#  tag_line        :string
-#  full_name       :string
-#  email           :string
-#  password_digest :string
-#  profile_pic     :string
+#  id          :integer          not null, primary key
+#  price       :decimal(, )
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  wishlist_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

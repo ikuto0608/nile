@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :biddings
   defaults format: :json do
     resources :wishlists
     resources :user_locations
