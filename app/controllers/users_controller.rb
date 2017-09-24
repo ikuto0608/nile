@@ -71,6 +71,7 @@ class UsersController < ApplicationController
       users = User.where(location_id: [location_from.id, location_to.id]).to_a
       @possible_delivers = users.inject([]) {|arr, user| arr << user if user.has_plan_with?([location_from.id, location_to.id]); arr }
     end
+    render json: User.all
   end
 
   def wishlists_of
