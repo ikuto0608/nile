@@ -14,4 +14,8 @@
 class UserLocation < ApplicationRecord
   belongs_to :user
   belongs_to :location
+
+  def location_name
+    @location_name ||= self.location.city_name
+  end
 end

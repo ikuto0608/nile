@@ -82,6 +82,6 @@ class UserLocationsController < ApplicationController
     end
 
     def filter
-      params[:filter]
+      params[:filter] || {}
     end
 end

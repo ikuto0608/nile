@@ -61,6 +61,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def possible_delivers
+    @possible_delivers = []
+
+    location_from = Location.where("city_name LIKE ?", "%#{filter[:coming_from].downcase}%").limit(1).first
+    location_to = Location.where("city_name LIKE ?", "%#{filter[:going_to].downcase}%").limit(1).first
+
+    if location_from && location_to
+      users = User.where(location_id: [location_from.id, location_to.id]).to_a
+      @possible_delivers = users.inject([]) {|arr, user| arr << user if user.has_plan_with?([location_from.id, location_to.id]); arr }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -79,5 +91,9 @@ class UsersController < ApplicationController
               :password,
               :password_confirmation
             )
+    end
+
+    def filter
+      params[:filter] || {}
     end
 end

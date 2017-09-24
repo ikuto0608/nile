@@ -5,7 +5,11 @@ Rails.application.routes.draw do
     resources :transactions
     resources :reviews
     resources :locations
-    resources :users
+    resources :users do
+      collection do
+        get :possible_delivers
+      end
+    end
     post 'tokens', to: 'tokens#create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

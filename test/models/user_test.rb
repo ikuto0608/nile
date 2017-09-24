@@ -11,6 +11,8 @@
 #  full_name       :string
 #  email           :string
 #  password_digest :string
+#  profile_pic     :string
+#  location_id     :integer
 #
 
 require 'test_helper'
