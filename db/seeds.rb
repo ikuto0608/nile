@@ -11,46 +11,52 @@ Location.find_or_create_by!(city_name: 'vancouver', lat: 49.282729, long: -123.1
 Location.find_or_create_by!(city_name: 'shanghai', lat: 31.23039, long: 121.473702)
 
 User.find_or_create_by!(
-  full_name: 'Wesley Wong', 
-  email: 'wes@mail.com', 
+  full_name: 'Wesley Wong',
+  email: 'wes@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 User.find_or_create_by!(
-  full_name: 'Ikuto Yata', 
-  email: 'ikuto@mail.com', 
+  full_name: 'Ikuto Yata',
+  email: 'ikuto@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 User.find_or_create_by!(
-  full_name: 'Ayako Sayama', 
-  email: 'ayako@mail.com', 
+  full_name: 'Ayako Sayama',
+  email: 'ayako@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 User.find_or_create_by!(
-  full_name: 'Jonathan Sue', 
-  email: 'jonathan@mail.com', 
+  full_name: 'Jonathan Sue',
+  email: 'jonathan@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 User.find_or_create_by!(
-  full_name: 'Matt Willcroix', 
-  email: 'matt@mail.com', 
+  full_name: 'Matt Willcroix',
+  email: 'matt@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 User.find_or_create_by!(
-  full_name: 'Alex Hache', 
-  email: 'alex@mail.com', 
+  full_name: 'Alex Hache',
+  email: 'alex@mail.com',
   password_digest: '1234',
   tag_line: Faker::Lorem.sentence,
-  profile_pic: Faker::Fillmurray.image
+  profile_pic: Faker::Fillmurray.image,
+  location_id: Location.all.sample.id
   )
 
 users = User.all
@@ -66,7 +72,7 @@ users.each do |u|
     user_id: u.id,
     location_id: location_ids.sample
   )
-  
+
 end
 
 
@@ -89,8 +95,8 @@ transactions = Transaction.all
 transactions.each do |t|
   if t.status == 'complete'
     Review.find_or_create_by!(
-      rating: Random.rand(1..5), 
-      description: Faker::Lorem.sentence, 
+      rating: Random.rand(1..5),
+      description: Faker::Lorem.sentence,
       reviewer_id: t.buyer_id,
       reviewee_id: t.seller_id,
       transaction_id: t.id
