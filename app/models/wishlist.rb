@@ -15,4 +15,7 @@ class Wishlist < ApplicationRecord
   has_one :user
   has_one :location
 
+  def location_name
+    @location_name ||= Location.find(self.location_id).city_name
+  end
 end

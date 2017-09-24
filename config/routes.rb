@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users do
       collection do
         get :possible_delivers
+        get :wishlists_of
       end
     end
     post 'tokens', to: 'tokens#create'

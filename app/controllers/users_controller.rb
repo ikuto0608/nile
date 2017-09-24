@@ -73,6 +73,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def wishlists_of
+    location_from = Location.where("city_name LIKE ?", "%#{filter[:want_something_from].downcase}%").limit(1).first
+
+    if location_from
+      user_ids = Wishlist.where(location_id: location_from.id).map(&:user_id)
+      @users = User.where(id: user_ids).to_a
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
