@@ -9,6 +9,13 @@ Location.find_or_create_by!(city_name: 'tokyo', lat: 35.689488, long: 139.691706
 Location.find_or_create_by!(city_name: 'kyoto', lat: 35.021247, long: 135.755597)
 Location.find_or_create_by!(city_name: 'vancouver', lat: 49.282729, long: -123.120738)
 Location.find_or_create_by!(city_name: 'shanghai', lat: 31.23039, long: 121.473702)
+Location.find_or_create_by!(city_name: 'new york', lat: 40.741895, long: -73.989308)
+Location.find_or_create_by!(city_name: 'toronto', lat: 43.653226, long: -79.383184)
+Location.find_or_create_by!(city_name: 'paris', lat: 48.856614, long: 2.352222)
+Location.find_or_create_by!(city_name: 'bangkok', lat: 13.756331, long: 100.501765)
+Location.find_or_create_by!(city_name: 'seoul', lat: 37.566535, long: 126.977969)
+Location.find_or_create_by!(city_name: 'seattle', lat: 47.60621, long: -122.332071)
+
 
 User.find_or_create_by!(
   full_name: 'Wesley Wong',
