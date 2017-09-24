@@ -69,6 +69,13 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.fetch(:transaction, {})
+      params.require(:transaction)
+            .permit(
+              :buyer_id,
+              :seller_id,
+              :description,
+              :price,
+              :status
+            )
     end
 end
