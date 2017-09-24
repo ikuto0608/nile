@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :offer_deliveries
+  resources :request_deliveries
   defaults format: :json do
     resources :wishlists
     resources :user_locations
@@ -9,6 +11,10 @@ Rails.application.routes.draw do
       collection do
         get :possible_delivers
         get :wishlists_of
+      end
+
+      member do
+        get :reviews
       end
     end
     post 'tokens', to: 'tokens#create'

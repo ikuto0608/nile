@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :reviews]
 
   # GET /users
   # GET /users.json
@@ -80,6 +80,10 @@ class UsersController < ApplicationController
       user_ids = Wishlist.where(location_id: location_from.id).map(&:user_id)
       @users = User.where(id: user_ids).to_a
     end
+  end
+
+  def reviews
+    @reviews = @user.reviews_as_reviewee
   end
 
   private
